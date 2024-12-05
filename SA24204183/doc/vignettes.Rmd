@@ -1,0 +1,99 @@
+---
+title: "1.Calculate the KL divergence loss for the weighted hybrid model"
+author: "Wang Haoxi"
+date: "2024-12-05"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{1.Calculate the KL divergence loss for the weighted hybrid model}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction
+
+This vignette demonstrates how to use the `KL_for_sales` function from the `SA24204183` R package. The `KL_for_sales` function is designed to compute the Kullback-Leibler (KL) divergence for weighted mixture models, calculate model selection metrics (AIC, BIC), and perform cross-validation for model evaluation.
+
+## Function Overview
+
+The `KL_for_sales` function fits a mixture of Gaussian models to your data, computes the KL divergence, and evaluates different models based on AIC, BIC, and cross-validation. It supports model selection and is useful for assessing the best fit for mixture models.
+
+## Function Arguments
+
+### `i`
+The current model index. This allows the function to compute the KL loss for a specific model.
+
+### `train`
+The training dataset used to fit the mixture models.
+
+### `test`
+The test dataset used for model evaluation and cross-validation.
+
+### `K`
+The number of candidate models to fit. The default is 7.
+
+### `R`
+The range for model selection based on AIC/BIC. The default is 2.
+
+## Example 1: Basic Usage
+
+Below is an example of how to call the `KL_for_sales` function with a simple training and test dataset:
+
+```{r}
+library(SA24204183)
+
+# Example datasets
+train_data <- rnorm(200)  # Example training data (normal distribution)
+test_data <- rnorm(50)    # Example test data (normal distribution)
+
+# Call KL_for_sales function with default parameters
+result <- KL_for_sales(i = 1, train = train_data, test = test_data)
+
+# Display results
+result
+```
+
+
+# Introduction
+
+This vignette demonstrates how to use the `gibbsC` function from the `SA24204183` R package. The `gibbsC` function implements a Gibbs sampling algorithm to generate samples from a joint distribution of two variables. The function iterates over a number of steps to generate samples of `x` and `y` from their respective conditional distributions.
+
+The Gibbs sampling is performed with the following steps:
+1. Sample `x` from a Gamma distribution conditional on `y`.
+2. Sample `y` from a normal distribution conditional on `x`.
+
+This process is repeated for a specified number of iterations and thinning steps to generate a sequence of samples.
+
+## Function Overview
+
+The `gibbsC` function performs Gibbs sampling for two variables `x` and `y` with the following properties:
+- `x` follows a Gamma distribution conditional on `y`.
+- `y` follows a normal distribution conditional on `x`.
+
+## Function Arguments
+
+### `N`
+The total number of iterations (or samples) to generate. The function will return `N` samples for both `x` and `y`.
+
+### `thin`
+The number of thinning steps between each sample. This allows for reducing autocorrelation in the generated samples by keeping every `thin`-th sample.
+
+## Example 2: Basic Usage
+
+Below is an example of how to call the `gibbsC` function with a basic setup:
+
+```{r}
+# Load the package (replace 'YourPackageName' with your actual package name)
+library(SA24204183)
+
+# Set the number of iterations and thinning steps
+N <- 1000  # Total number of samples
+thin <- 10  # Thinning step
+
+max(N, thin)
+
+# Generate samples using the gibbsC function
+samples <- gibbsC(N = N, thin = thin)
+
+# Display the first few samples of x and y
+head(samples)
+```

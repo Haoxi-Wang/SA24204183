@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Wang Haoxi" />
+
+<meta name="date" content="2024-12-05" />
+
+<title>1.Calculate the KL divergence loss for the weighted hybrid model</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">1.Calculate the KL divergence loss for the
+weighted hybrid model</h1>
+<h4 class="author">Wang Haoxi</h4>
+<h4 class="date">2024-12-05</h4>
+
+
+
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>This vignette demonstrates how to use the <code>KL_for_sales</code>
+function from the <code>SA24204183</code> R package. The
+<code>KL_for_sales</code> function is designed to compute the
+Kullback-Leibler (KL) divergence for weighted mixture models, calculate
+model selection metrics (AIC, BIC), and perform cross-validation for
+model evaluation.</p>
+<div id="function-overview" class="section level2">
+<h2>Function Overview</h2>
+<p>The <code>KL_for_sales</code> function fits a mixture of Gaussian
+models to your data, computes the KL divergence, and evaluates different
+models based on AIC, BIC, and cross-validation. It supports model
+selection and is useful for assessing the best fit for mixture
+models.</p>
+</div>
+<div id="function-arguments" class="section level2">
+<h2>Function Arguments</h2>
+<div id="i" class="section level3">
+<h3><code>i</code></h3>
+<p>The current model index. This allows the function to compute the KL
+loss for a specific model.</p>
+</div>
+<div id="train" class="section level3">
+<h3><code>train</code></h3>
+<p>The training dataset used to fit the mixture models.</p>
+</div>
+<div id="test" class="section level3">
+<h3><code>test</code></h3>
+<p>The test dataset used for model evaluation and cross-validation.</p>
+</div>
+<div id="k" class="section level3">
+<h3><code>K</code></h3>
+<p>The number of candidate models to fit. The default is 7.</p>
+</div>
+<div id="r" class="section level3">
+<h3><code>R</code></h3>
+<p>The range for model selection based on AIC/BIC. The default is 2.</p>
+</div>
+</div>
+<div id="example-1-basic-usage" class="section level2">
+<h2>Example 1: Basic Usage</h2>
+<p>Below is an example of how to call the <code>KL_for_sales</code>
+function with a simple training and test dataset:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(SA24204183)</span></code></pre></div>
+<pre><code>## Warning: replacing previous import &#39;distr::n&#39; by &#39;dplyr::n&#39; when loading
+## &#39;SA24204183&#39;</code></pre>
+<pre><code>## Warning: replacing previous import &#39;distr::location&#39; by &#39;dplyr::location&#39; when
+## loading &#39;SA24204183&#39;</code></pre>
+<pre><code>## Warning: replacing previous import &#39;mclust::dmvnorm&#39; by &#39;mvtnorm::dmvnorm&#39; when
+## loading &#39;SA24204183&#39;</code></pre>
+<pre><code>## Warning: replacing previous import &#39;distr::qqplot&#39; by &#39;stats::qqplot&#39; when
+## loading &#39;SA24204183&#39;</code></pre>
+<pre><code>## Warning: replacing previous import &#39;distr::df&#39; by &#39;stats::df&#39; when loading
+## &#39;SA24204183&#39;</code></pre>
+<pre><code>## Warning: replacing previous import &#39;dplyr::filter&#39; by &#39;stats::filter&#39; when
+## loading &#39;SA24204183&#39;</code></pre>
+<pre><code>## Warning: replacing previous import &#39;dplyr::lag&#39; by &#39;stats::lag&#39; when loading
+## &#39;SA24204183&#39;</code></pre>
+<pre><code>## Warning: replacing previous import &#39;distr::sd&#39; by &#39;stats::sd&#39; when loading
+## &#39;SA24204183&#39;</code></pre>
+<pre><code>## 
+## Attaching package: &#39;SA24204183&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:base&#39;:
+## 
+##     max</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Example datasets</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>train_data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">200</span>)  <span class="co"># Example training data (normal distribution)</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>test_data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">50</span>)    <span class="co"># Example test data (normal distribution)</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co"># Call KL_for_sales function with default parameters</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">KL_for_sales</span>(<span class="at">i =</span> <span class="dv">1</span>, <span class="at">train =</span> train_data, <span class="at">test =</span> test_data)</span></code></pre></div>
+<pre><code>## 
+## Iter: 1 fn: 290.5219  Pars:  0.9519013735 0.0000009623 0.0480976642
+## Iter: 2 fn: 290.5219  Pars:  0.9519016348 0.0000005732 0.0480977920
+## solnp--&gt; Completed in 2 iterations
+## 
+## Iter: 1 fn: 288.1930  Pars:  0.5100424269 0.0000005716 0.4899570015
+## Iter: 2 fn: 288.1930  Pars:  0.5100426084 0.0000003547 0.4899570369
+## solnp--&gt; Completed in 2 iterations</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>result</span></code></pre></div>
+<pre><code>## $KLloss
+## [1] 0.004793497 0.004793497 0.004718713 0.004793094 0.003871530 0.000000000
+## [7] 0.027130321
+## 
+## $KL_for_each_model
+## [1] 0.004793497 0.003476964 0.003427502 0.053111280 0.070310740 0.074124915
+## [7] 0.073743286
+## 
+## $AIC_one
+## [1] 1 0 0 0 0 0 0
+## 
+## $BIC_one
+## [1] 1 0 0 0 0 0 0
+## 
+## $AIC_w
+## [1] 0.94748249 0.05003367 0.00248384 0.00000000 0.00000000 0.00000000 0.00000000
+## 
+## $BIC_w
+## [1] 0.999625010 0.000374858 0.000000000 0.000000000 0.000000000 0.000000000
+## [7] 0.000000000
+## 
+## $Equal_w
+## [1] 0.3333333 0.3333333 0.3333333 0.0000000 0.0000000 0.0000000 0.0000000
+## 
+## $CV5_w
+## [1] 0.95190218 0.00000000 0.04809782 0.00000000 0.00000000 0.00000000 0.00000000
+## 
+## $CV10_w
+## [1] 0.5100428 0.0000000 0.4899572 0.0000000 0.0000000 0.0000000 0.0000000</code></pre>
+</div>
+</div>
+<div id="introduction-1" class="section level1">
+<h1>Introduction</h1>
+<p>This vignette demonstrates how to use the <code>gibbsC</code>
+function from the <code>SA24204183</code> R package. The
+<code>gibbsC</code> function implements a Gibbs sampling algorithm to
+generate samples from a joint distribution of two variables. The
+function iterates over a number of steps to generate samples of
+<code>x</code> and <code>y</code> from their respective conditional
+distributions.</p>
+<p>The Gibbs sampling is performed with the following steps: 1. Sample
+<code>x</code> from a Gamma distribution conditional on <code>y</code>.
+2. Sample <code>y</code> from a normal distribution conditional on
+<code>x</code>.</p>
+<p>This process is repeated for a specified number of iterations and
+thinning steps to generate a sequence of samples.</p>
+<div id="function-overview-1" class="section level2">
+<h2>Function Overview</h2>
+<p>The <code>gibbsC</code> function performs Gibbs sampling for two
+variables <code>x</code> and <code>y</code> with the following
+properties: - <code>x</code> follows a Gamma distribution conditional on
+<code>y</code>. - <code>y</code> follows a normal distribution
+conditional on <code>x</code>.</p>
+</div>
+<div id="function-arguments-1" class="section level2">
+<h2>Function Arguments</h2>
+<div id="n" class="section level3">
+<h3><code>N</code></h3>
+<p>The total number of iterations (or samples) to generate. The function
+will return <code>N</code> samples for both <code>x</code> and
+<code>y</code>.</p>
+</div>
+<div id="thin" class="section level3">
+<h3><code>thin</code></h3>
+<p>The number of thinning steps between each sample. This allows for
+reducing autocorrelation in the generated samples by keeping every
+<code>thin</code>-th sample.</p>
+</div>
+</div>
+<div id="example-2-basic-usage" class="section level2">
+<h2>Example 2: Basic Usage</h2>
+<p>Below is an example of how to call the <code>gibbsC</code> function
+with a basic setup:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># Load the package (replace &#39;YourPackageName&#39; with your actual package name)</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="fu">library</span>(SA24204183)</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="co"># Set the number of iterations and thinning steps</span></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">1000</span>  <span class="co"># Total number of samples</span></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>thin <span class="ot">&lt;-</span> <span class="dv">10</span>  <span class="co"># Thinning step</span></span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a><span class="fu">max</span>(N, thin)</span></code></pre></div>
+<pre><code>## [1] 1000</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># Generate samples using the gibbsC function</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>samples <span class="ot">&lt;-</span> <span class="fu">gibbsC</span>(<span class="at">N =</span> N, <span class="at">thin =</span> thin)</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="co"># Display the first few samples of x and y</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a><span class="fu">head</span>(samples)</span></code></pre></div>
+<pre><code>##           [,1]        [,2]
+## [1,] 0.8294070  0.29535307
+## [2,] 0.2783256  1.99789091
+## [3,] 0.1353878  0.06430583
+## [4,] 0.5373143  0.80190460
+## [5,] 0.6170077  1.45589143
+## [6,] 0.2090767 -0.29879376</code></pre>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

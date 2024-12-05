@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Wang Haoxi" />
+
+<meta name="date" content="2024-12-05" />
+
+<title>2.Homework</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">2.Homework</h1>
+<h4 class="author">Wang Haoxi</h4>
+<h4 class="date">2024-12-05</h4>
+
+
+
+<div id="hw1" class="section level1">
+<h1>hw1</h1>
+<div id="section" class="section level2">
+<h2>3.4：</h2>
+<p>编写一个算法来从雷利( <span class="math inline">\(\sigma\)</span>
+)分布中生成随机样本。对多个σ&gt;0 的值生成雷利( <span class="math inline">\(\sigma\)</span>
+)分布的样本，并检查生成样本的众数是否接近理论众数 <span class="math inline">\(\sigma\)</span> （检查直方图）。</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.2.3</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># 自定义函数：生成雷利分布的随机样本</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co"># n: 样本量</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co"># sigma: 分布的参数 σ（理论众数）</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>generate_rayleigh <span class="ot">&lt;-</span> <span class="cf">function</span>(n, sigma) {</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="co"># 使用逆变换法生成雷利分布的随机样本</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>  <span class="co"># U 是 (0, 1) 上的均匀分布</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  U <span class="ot">&lt;-</span> <span class="fu">runif</span>(n)</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>  <span class="co"># 使用雷利分布的逆CDF公式生成样本</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>  rayleigh_samples <span class="ot">&lt;-</span> sigma <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">log</span>(<span class="dv">1</span> <span class="sc">-</span> U))</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>  </span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>  <span class="fu">return</span>(rayleigh_samples)</span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>}</span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co"># 自定义函数：绘制直方图并检查众数</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>plot_rayleigh_histogram <span class="ot">&lt;-</span> <span class="cf">function</span>(samples, sigma) {</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>  <span class="co"># 将生成的样本转换为数据框，以便使用 ggplot 绘图</span></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>  data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">samples =</span> samples)</span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>  </span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a>  <span class="co"># 绘制直方图</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> samples)) <span class="sc">+</span></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density)), <span class="at">bins =</span> <span class="dv">30</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;skyblue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a>    <span class="co"># 添加理论雷利分布的密度曲线</span></span>
+<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a>    <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x) x <span class="sc">/</span> sigma<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>x<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> sigma<span class="sc">^</span><span class="dv">2</span>)), <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a>    <span class="co"># 添加理论众数 σ 的垂直线</span></span>
+<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> sigma, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Histogram of Rayleigh Samples (sigma =&quot;</span>, sigma, <span class="st">&quot;)&quot;</span>),</span>
+<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">&quot;Samples&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>) <span class="sc">+</span></span>
+<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a>  </span>
+<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a>  <span class="fu">print</span>(p)</span>
+<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a>}</span>
+<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" tabindex="-1"></a><span class="co"># 设置样本量和 sigma 的不同值</span></span>
+<span id="cb3-34"><a href="#cb3-34" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span>  <span class="co"># 样本量</span></span>
+<span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a>sigma_values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)  <span class="co"># 不同的 σ 值</span></span>
+<span id="cb3-36"><a href="#cb3-36" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" tabindex="-1"></a><span class="co"># 对每个 σ 值生成样本并绘制直方图</span></span>
+<span id="cb3-38"><a href="#cb3-38" tabindex="-1"></a><span class="cf">for</span> (sigma <span class="cf">in</span> sigma_values) {</span>
+<span id="cb3-39"><a href="#cb3-39" tabindex="-1"></a>  samples <span class="ot">&lt;-</span> <span class="fu">generate_rayleigh</span>(n, sigma)  <span class="co"># 生成样本</span></span>
+<span id="cb3-40"><a href="#cb3-40" tabindex="-1"></a>  <span class="fu">plot_rayleigh_histogram</span>(samples, sigma)  <span class="co"># 绘制直方图并检查众数</span></span>
+<span id="cb3-41"><a href="#cb3-41" tabindex="-1"></a>}</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,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" /><!-- --><img role="img" src="data:image/png;base64,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" /><!-- --><img role="img" src="data:image/png;base64,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" /><!-- --></p>
+<p>这三张图展示了对于不同 <span class="math inline">\(\sigma\)</span>
+值（1、2 和
+3）的雷利分布样本的直方图和理论密度曲线。每张图的解读如下：</p>
+<ul>
+<li><strong>总体结构</strong>：每张图的蓝色柱状图表示从雷利分布生成的随机样本的分布。它们代表了样本的概率密度。
+红色的曲线是理论上的雷利分布密度函数，它与生成的样本应该匹配得很好。蓝色虚线代表理论众数（<span class="math inline">\(\sigma\)</span>）即雷利分布的众数应该位于这个值附近。</li>
+<li><strong>图1（<span class="math inline">\(\sigma\)</span>
+=1）</strong>：在这张图中，生成的样本众数非常接近 <span class="math inline">\(\sigma\)</span>
+=1，这在直方图的高峰处可以清楚看到。
+红色理论密度曲线与样本的直方图匹配得相当好，说明样本准确地反映了雷利分布。</li>
+<li><strong>图2（<span class="math inline">\(\sigma\)</span>
+=2）</strong>：在这张图中，众数在 <span class="math inline">\(\sigma\)</span>
+=2附近，符合理论预期。同样，样本的直方图与红色的理论密度曲线吻合良好，显示样本分布与雷利分布的理论性质一致。</li>
+<li><strong>图3（<span class="math inline">\(\sigma\)</span>
+=3）</strong>：在此图中，众数明显接近 <span class="math inline">\(\sigma\)</span> =3，对应直方图的最高点。
+红色的雷利分布密度曲线与直方图依然符合良好，样本很好地遵循了雷利分布的特征。</li>
+</ul>
+<div id="总体结论" class="section level4">
+<h4>总体结论：</h4>
+<p>这三张图表明，使用不同的 <span class="math inline">\(\sigma\)</span>
+值生成的雷利分布样本的众数非常接近理论上的众数 <span class="math inline">\(\sigma\)</span>，而且样本的分布密度与理论雷利分布的密度曲线吻合较好，验证了生成随机样本的算法是有效的。
+<br><br></p>
+</div>
+</div>
+<div id="section-1" class="section level2">
+<h2>3.11：</h2>
+<p>生成一个大小为 1000
+的随机样本，该样本来自一个正态混合分布。混合分布的成分分别为 <span class="math inline">\(N(0, 1)\)</span> 和 <span class="math inline">\(N(3, 1)\)</span> 分布，混合概率为 <span class="math inline">\(p_1\)</span> 和 <span class="math inline">\(p_2 =
+1 - p_1\)</span>。绘制样本的直方图，并叠加其密度曲线，其中 <span class="math inline">\(p_1 = 0.75\)</span>。对于不同的 <span class="math inline">\(p_1\)</span>
+值重复实验，观察混合分布的经验分布是否表现为双峰。对于能够生成双峰混合分布的
+<span class="math inline">\(p_1\)</span> 值提出一个猜想。</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># 设置随机种子，以便结果可重复</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># 混合分布的参数</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span>        <span class="co"># 样本大小</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fl">0.75</span>       <span class="co"># N(0, 1) 的混合概率</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> p1     <span class="co"># N(3, 1) 的混合概率</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co"># 生成混合正态分布的随机样本</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="co"># 先生成一个大小为n的样本，确定每个样本是来自哪一个分布</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co"># rbinom(n, 1, p1) 返回一个0和1的向量，1代表来自N(0,1)，0代表来自N(3,1)</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>mix_sample <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, p1)</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co"># 根据 mix_sample 的值生成最终的样本</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co"># 如果是1，则从N(0, 1)生成值；如果是0，则从N(3, 1)生成值</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a>sample <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(mix_sample <span class="sc">==</span> <span class="dv">1</span>, <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">rnorm</span>(n, <span class="dv">3</span>, <span class="dv">1</span>))</span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co"># 创建数据框，方便使用 ggplot</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">sample =</span> sample)</span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co"># 绘制直方图，叠加核密度估计曲线</span></span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> sample)) <span class="sc">+</span></span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density)), <span class="at">bins =</span> <span class="dv">30</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>) <span class="sc">+</span>  <span class="co"># 直方图</span></span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span>  <span class="co"># 核密度曲线</span></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Normal Mixture Distribution with p1 = 0.75&quot;</span>) <span class="sc">+</span>  <span class="co"># 图标题</span></span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Value&quot;</span>) <span class="sc">+</span>  <span class="co"># X轴标签</span></span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Density&quot;</span>) <span class="sc">+</span>  <span class="co"># Y轴标签</span></span>
+<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()  <span class="co"># 简洁的主题</span></span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># 为不同的 p1 值绘制分布，观察双峰现象</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co"># p1 值可以设置为 0.5、0.25、0.1 等</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>p_values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.25</span>, <span class="fl">0.1</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="cf">for</span> (p1 <span class="cf">in</span> p_values) {</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>  p2 <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> p1</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>  mix_sample <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, p1)</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>  sample <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(mix_sample <span class="sc">==</span> <span class="dv">1</span>, <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">rnorm</span>(n, <span class="dv">3</span>, <span class="dv">1</span>))</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>  </span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">sample =</span> sample)</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>  </span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>  <span class="co"># 绘制每个p1值的直方图和密度曲线</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> sample)) <span class="sc">+</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density)), <span class="at">bins =</span> <span class="dv">30</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste</span>(<span class="st">&quot;Normal Mixture Distribution with p1 =&quot;</span>, p1)) <span class="sc">+</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;Value&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">&quot;Density&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a>  <span class="co"># 打印绘图</span></span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a>  <span class="fu">print</span>(p)</span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a>}</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,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" /><!-- --><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASAAAAEgCAMAAAAjXV6yAAABNVBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZrY6AAA6ADo6AGY6OgA6Ojo6OmY6OpA6ZmY6ZpA6ZrY6kJA6kLY6kNtNTU1NTW5NTY5NbqtNjshmAABmADpmOgBmOjpmOmZmZjpmkJBmkNtmtrZmtttmtv9uTU1uTW5uTY5ubo5ubqtuq+SOTU2OTW6OTY6Obk2ObquOyP+QOgCQZgCQZjqQZmaQkDqQkGaQkLaQtpCQttuQ27aQ2/+rbk2rbm6rjk2ryKur5OSr5P+t2Oa2ZgC2kDq2tpC2ttu225C229u22/+2/7a2/9u2///Ijk3I///bkDrbkGbbtmbbtpDb25Db27bb29vb/7bb/9vb///kq27k///r6+v/AAD/tmb/yI7/25D/27b/29v/5Kv//7b//8j//9v//+T////ognvRAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAOfElEQVR4nO3djZvbtBkAcOfaS0rH6EZSaOg2oCkbMLZmGxvs9kXSDjquDWVbe6VKw5IG//9/wvRKlmXZsiX5Uz6/7/O0vtPZsvKLJH8okYMQozCCrgvgeyCQIRDIEAhkCAQyBAIZAoEMgUCGKAG0CaZseZhPrbc5Lk8v+E/r1z+P0r792TSRTmP383OLnbN4/aGSqbo1pB/m4+zGsIq6kbHMu1JAozNYlgSKtg53kyAFtDmxBgqCRRpIbp0LBKs4Am1KAQVsHyWBRtf5Zpsrk9T2VkBsneM3k4g5b+tcIMcoBXTyKWtkHOj720Fw9SEQjDfByYPJ9Mlk9F64nQQ3QOTJ9SCgvyaBTj5lPx6X7054DWJNdhu8uaT1YspXpJlFGT5kO2AtSnmNW1H9jr+ne7hDf+ZbwzZf8RpEy8ALFuV4TOxAlvr0wXVWwjAUq7LysPVPn9FNygB9vYT3jwHRUtCgvx6XVybB6b8nb9CE0WeQOo4bxEIB+vIavPm7176MgI7Lk/PDnGaaBoIML3ZiByoQ3xD+8T2IVw/bPGNAVyaiYFmgRKnjBstyh/2soeS7ybQC0PluQvcCQHQHd8CBlXTKOpY74RNajhBWoS/9IaSNFaCvl1Dz1uNdBERrA33fF8kuggPxd5JWj/BbmoUKRPM5h3V3k59csD1EW/NtACh48+J4Pxgncox3oJR6DB1NlP1usqAvK6CrbUdn5fsguj1UQwDa8ZKvITsoOvv9MIeqz0n+++APk0AFOl8z3UUMRN8zVsI0EM9wqrhkga68+1X8F74NB+L58LVSQOlSxx0W/LC79kdaj9a8gpYGom/sGQdilVN489fD9wcMvH2kgeja4RaqoQDa8S43DQQ/baODlmhjaSDADYIbD9WtAYjDioKlgNRSsz/yXE8vtif/mi9466gABC3oqRGI1tY3/vTPp/MUEOx9PQ4l0JZ3Ai5Aog+izY/2t9AoagGiSWvaWY1hjWpAdMufpppYFogXJN0HnUNHTf8SAx3mV29DnizjtajzIsOFZueJoxjEf35HgdNA45A3MZmjtompQLvJ+7SH3JzeF5mVB4L+X+2kdUC0B6RHVPFXAbQd/YL+HwPRtxlerziGvAe5ys51RM+8v1+qfRA9D4peAT09oP3dfbrlJnHEYpWX5g6dtMwxXiVdaglED4P0GLsdXR9XOVHkhWVnwskDZhZIHETTQLT04zAG4jWM9fw0R9amrt6OK13UxsQ5ZfpMOtoFeynyJAGA4HwDmp7MUa6SKrUEoquwty4+Ua8AFF2T7eQpV7aTZudjn4v+NAaib+pCAq2h4oDS4TYcc7+h55jPlrJVwg6u3JEvgL20G/G1GDtRpId6tvWzZB9EFX7MTjBFjolV1FIngLbw1smDYXjAq3lDIJAhEMgQCGQIBDIEAhkCgQyBQIZAIEMgkCEqA73oZ7L1yghkSEYgQzICGZIRyJCMQIZkBDIkI5AhGYEMyQhkSO4/UKCGZSZDAlqxEAvLTBDIkEkdQK8+nr39Hfvp5Wz21uOctYYL9MNf7oXPb8FP+18+jn6qsqemkjsDevXJY0bDQ/5Udk9NJXcGtP/wu/DVr7+IfpM16IVnkQKqK1sz0Mu3JdD+7s0vclbDGsRD/lR2T00le9IHhY/u2WbZcnKHR7GPop4n2djK76mp5K7Pg9gxfjbDPqhsIJAh/AAiNBBInxxEPpwIgTLJQewDQgiUSQ54+wq4EAJlkoOo6vCKhECZZNH58K4IgTLJ0fFL9NWWmQwHiCSAVgiUTY5PgFY5VWjgQEQB0lUhBFqpQGmhYQORFJBGaPBAqYtVBEIgh2SiBSI5a5faY++BMveDEMgMRPRrl9pjj4EC1pyCzB1FBBJAK3EZj0Da5AIgkl277B77DET0QCEC8UUgbwRlgEhm7bJ7vIxAIQKx8BWors+XVA6iBRJ/qZp7eaC0V2fJyVuJcsEiWYWG28T0QOx/BApTN6OzQKQ4k2EAZWUS982KM0EgIj53j0A5QOKjDAikAwoQiCCQEUgrI4EIAhUArYYOlBkQQyA1OTucgUBKsg0QQaACoNWwgTQjhhogMmig9IBYZoFACJSbTBCoOJndzbAAInlfpkegFReKfquwxz4CsXvOQXpQHoHi0I85I1Ac+jFnBIpDP2KoBcr7EhkCrZJVaGhA+iFVBIqjYEAsOzzWIJCc/WV/dzbL+dq810CrRoHk7C/wnfn9B/58b94TIDnzwktg8mjmBU+A8ubuqP65lYpRNCifM35YYi9mIGVCCpinwta86eTiATF1IYfHyu7Rrga9+jjPZ8BAidlf9nfzjmEdABmGVDNA2i/TlwM6zJPP5pSzvxT5dAJkISMWtQKxhw3Kx7TGs788n0H4chTrFAhqkXyWl1UMDYgTOTzRtm0g45hzw0Ab9kTPte3zkDsBspKRQLoJPUoCwfPw+PMj7auQ50CrOoEOc/eHRbcNZDGk2iSQa/Vx2VM9yTYDYmkgzYwnlxQoiMYzXID0U8KUAYof0CmeDG0XrQJFLaYboLgGucWQgEpFu0CkO6ADPCKbNzF/+yDLEcM0UHZSoctagyxHDNXFwIAcZOoH4s3M7WxxUEDrMTzpejPWb2ybZXPJpYFsZzYzH+bhudkenyiWAnKY+s0MdJhPPQayHnNuCOi4nG5HZ9DQHKJlICeZuoHC3YReZjjcC3LaU/VkhwGxhoDKRLtAbjISyHLywIEC2c+uaNHEfL7U6BwIjvHO0R6Q04hhI0Ce3+5wG85IAdnNz2msQT4DOY73KIuagOxOEWv/OItluN6tTwG57k4H5Pf9oIpAZQvSm8O883jPAIHcxntSQFYzvBqBNkGw2Ph5qVEJKDN/adn7QadP+R0Ph2gJyOordE0DsdsdCz9vd9h9Q6wIyGYK3P4CkYpAlnMEm5rYBpoY3DNziNaAQg+Awi2cBjn5tANEfAEqEW0BwaI0UPShhzIFGQZQ9lMwpYBYAwscL1jbACLVgdJD9CWAjkt29DrMvTtRjI/R3QKJM+jj0rejWNzBdgokbwa5XWv0CMg8DXcRkLyd6NuJIqkFaHVpgRJv/dCAgnjqEQNQvObQgKLiF65d7TK+VqD4U64eAUXPFqkJyDiRu2dn0pZAVWXE4lIClfzAy2CAyn6eIw/INJF734DKDzZrF5cOqMpY6uUFkidHlUbCLjFQnFjXCVBjQHL2l1B8gd4qS+vkYqDazhCTQIZnJTgBydlfwvDl7K22geDVvKgXKKgXKDHzwqObf2+7BrF3228gZfaXRBOr7wMtotyaRBJ9YKV2IOuPwZiBlNlfWu6Dot6i7hqUGPxpsAaVkMhJzgUSvanfQIk+qGWgeIjGbyA5+0vYKhBhJ9A9AJKzv4RtAnGf5oCIY7G7PZMmUcTJhIgbHHztmoHCfgERNcTv/MXUcBe650AkJ2ol0QARt2K3CyQv1WVjiroGUY0akYmBQt+BlLdSzvYcDV8kVxk4kFJZtBerwwbiXUFHQMSp2J0ARaUU5Vae7dAwUNgHIKLvbpKrDBooPtR2BURcit0+kDzd7wQo9B0ovlTvACjxoGxvgeSlegdA7H//gfIstImNABF/gUj3QCufgZL3MjIWTVy/5wAR/TO1OgeSl6d8341b6BfKu2QqdptAzd7s6T9Qwzd7eg/Emr4vQPpJpjsH6qzXSS28BGr8dqEbkHYO5S6B1DtAXS/8A0rdAep60ShQmc9xgE/9H9aoCFT10x22XsXJ4gK6+jfiagbSTRHcRRODQuXeAepu4R1QxxcXOiDNBK8dAeXfIutw4REQP+no9urLZ6DovL57kgyQTqh9IHEHqHuS1MIjoM4t8oCs5uFuGIh4C2Q7UXmzQPIWmQ8kGSCbSYIbBfLmFpl20T2QP7fI8oAspnhtDKjUg4paXWRnfmsXqMxjZloHMs8/2RyQp2eICSBNFWoRyNszRE+APD4BUoCM8082BER6AWQz/2SDQD4gGIAsZg9sBsjvM0QViBS/miaAiOdniAmgtFArQMzHmwEMA1BKqA0g5hP2BkgVah6IRPvrD1Bc5MaB+PhXtLMeAUV9ZvLj/o0AEZLw6RWQ8tWsZoCIjGgfPQBKhhByApKTmySnOUkHSYZ8E3oApCxKAMnJTZLTnKgbx91O8szHtyEwy4UzkJxYQJliQNk4ovf+sst+4QAkp6ZQJqlIfvwluHxRanITZZqTdDh9kNyf5Bo+aZ9Xg6oUy5/kGoAs+iDnYvmTXAOQnNxEmeakUrH8Sa4BKDG5SdF5kDcvuX0gu/DmJSNQrckIZEhGIENye0CXPRDIEAhkCAQyBAIZAoEMgUCGQCBDIJAhGgLa353N7lmuW3SvoFrOEDDiYL3q7GbmtmAzQHD/cf9Bzj3IVOSOmVTOmcVze85H99jdZTWaAXp5i+/PJgrvV1bKGWL/q99Y1+RPdIVorg/KvYudisI73pVypvHDX/9h3cT2H/6ttSYW8vu0VlE4ZlIpZxrPP7Lvg/Z377F3S436gR7NZreg57V9Fa41yD5nlrcDkLYgjR3FrLsJtz7IJWfooSEsQV/9tj0gl1dROGZSKecoe5ejWBtNDIK/c5YlczoPcsoZwgGIFiT7ABo8kzYEAhkCgQyBQIZAIEMgkCE8BDoux2y5GYuU3bWzjsriJVC4Yc9SPi7Fw6cRKBXcY/fauZrQTfgIFK6nIW9hu0kQBFMAYkbw33Hp+LTuiuEl0Pb0grUw9oh32uASQKyD2tC/txVeAh3eOWMt7H/gwHUE0BZqD4NrKbwEgjbGj2Fb2sRGSaAN/zjztLWi+Am0PX0Gx7DDfHSWqkFtti4WfgId3vkMjmHQF4VbpQbR39otip9A4fpH45DZ0AMZAzrMp7TfHtFOmqK1qeQp0DZg3fCa9kB/ni+g+sAR//13+GG+zVrkKZA/gUCGQCBDIJAhEMgQCGQIBDIEAhkCgQyBQIb4P0yi1DhMgzAMAAAAAElFTkSuQmCC" /><!-- --><img role="img" src="data:image/png;base64,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" /><!-- --></p>
+<div id="猜想" class="section level4">
+<h4>猜想：</h4>
+<p>随着<span class="math inline">\(p_1\)</span>
+的降低，混合分布会表现出明显的双峰现象，当两个分布的权重接近时（例如
+<span class="math inline">\(p_1 =0.5\)</span>时），双峰最为显著。
+<br><br></p>
+</div>
+</div>
+<div id="section-2" class="section level2">
+<h2>3.20：</h2>
+<p>复合泊松过程是一个随机过程 <span class="math inline">\(\{X(t), t \geq
+0\}\)</span>，可以表示为随机和： <span class="math inline">\(X(t) =
+\sum_{i=1}^{N(t)} Y_i, \quad t \geq 0,\)</span> 其中 <span class="math inline">\(\{N(t), t \geq 0\}\)</span> 是一个泊松过程，且
+<span class="math inline">\(Y_1, Y_2, \dots\)</span>
+是独立同分布的，并且与 <span class="math inline">\(\{N(t), t \geq
+0\}\)</span> 相互独立。编写一个程序来模拟复合泊松<span class="math inline">\((\lambda)\)</span>-伽马过程（其中 <span class="math inline">\(Y\)</span> 服从伽马分布）。估计 <span class="math inline">\(X(10)\)</span>
+的均值和方差，对于多组参数值，比较模拟结果与理论值。提示： <span class="math inline">\(E[X(t)] = \lambda t E[Y_1], \quad \text{Var}(X(t))
+= \lambda t E[Y_1^2].\)</span></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># 设置随机种子以确保可重复性</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co"># 泊松-伽马过程参数</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="dv">2</span>  <span class="co"># 泊松过程参数 λ</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="dv">10</span>      <span class="co"># 时间 t</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="dv">2</span>   <span class="co"># 伽马分布形状参数</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="dv">1</span>    <span class="co"># 伽马分布尺度参数</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co"># 模拟复合泊松过程</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>simulate_compound_poisson_gamma <span class="ot">&lt;-</span> <span class="cf">function</span>(lambda, t, alpha, beta) {</span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>  <span class="co"># 生成泊松过程N(t)</span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a>  N_t <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1</span>, lambda <span class="sc">*</span> t)</span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>  </span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a>  <span class="co"># 如果N(t) &gt; 0，生成N(t)个伽马随机变量Y_i</span></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a>  <span class="cf">if</span> (N_t <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a>    Y <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(N_t, <span class="at">shape =</span> alpha, <span class="at">scale =</span> beta)</span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a>    X_t <span class="ot">&lt;-</span> <span class="fu">sum</span>(Y)  <span class="co"># 复合泊松过程 X(t)</span></span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a>    X_t <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a>  }</span>
+<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a>  </span>
+<span id="cb6-23"><a href="#cb6-23" tabindex="-1"></a>  <span class="fu">return</span>(X_t)</span>
+<span id="cb6-24"><a href="#cb6-24" tabindex="-1"></a>}</span>
+<span id="cb6-25"><a href="#cb6-25" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" tabindex="-1"></a><span class="co"># 模拟多个复合泊松过程并估计均值和方差</span></span>
+<span id="cb6-27"><a href="#cb6-27" tabindex="-1"></a>n_simulations <span class="ot">&lt;-</span> <span class="dv">10000</span>  <span class="co"># 模拟次数</span></span>
+<span id="cb6-28"><a href="#cb6-28" tabindex="-1"></a>X_t_samples <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n_simulations, <span class="fu">simulate_compound_poisson_gamma</span>(lambda, t, alpha, beta))</span>
+<span id="cb6-29"><a href="#cb6-29" tabindex="-1"></a></span>
+<span id="cb6-30"><a href="#cb6-30" tabindex="-1"></a><span class="co"># 估计的均值和方差</span></span>
+<span id="cb6-31"><a href="#cb6-31" tabindex="-1"></a>estimated_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(X_t_samples)</span>
+<span id="cb6-32"><a href="#cb6-32" tabindex="-1"></a>estimated_variance <span class="ot">&lt;-</span> <span class="fu">var</span>(X_t_samples)</span>
+<span id="cb6-33"><a href="#cb6-33" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="#cb6-34" tabindex="-1"></a><span class="co"># 理论值计算</span></span>
+<span id="cb6-35"><a href="#cb6-35" tabindex="-1"></a>theoretical_mean <span class="ot">&lt;-</span> lambda <span class="sc">*</span> t <span class="sc">*</span> alpha <span class="sc">*</span> beta</span>
+<span id="cb6-36"><a href="#cb6-36" tabindex="-1"></a>theoretical_variance <span class="ot">&lt;-</span> lambda <span class="sc">*</span> t <span class="sc">*</span> (alpha <span class="sc">*</span> beta<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> alpha<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> beta<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb6-37"><a href="#cb6-37" tabindex="-1"></a></span>
+<span id="cb6-38"><a href="#cb6-38" tabindex="-1"></a><span class="co"># 输出结果</span></span>
+<span id="cb6-39"><a href="#cb6-39" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;估计均值: &quot;</span>, estimated_mean, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 估计均值:  40.14622</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;理论均值: &quot;</span>, theoretical_mean, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 理论均值:  40</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;估计方差: &quot;</span>, estimated_variance, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 估计方差:  114.8652</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;理论方差: &quot;</span>, theoretical_variance, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 理论方差:  120</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co">#更换不同的多组参数值，比较模拟结果与理论值</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="dv">3</span>  <span class="co"># 泊松过程参数 λ</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="dv">10</span>      <span class="co"># 时间 t</span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="dv">3</span>   <span class="co"># 伽马分布形状参数</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="dv">2</span>    <span class="co"># 伽马分布尺度参数</span></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>X_t_samples <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n_simulations, <span class="fu">simulate_compound_poisson_gamma</span>(lambda, t, alpha, beta))</span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>estimated_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(X_t_samples)</span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>estimated_variance <span class="ot">&lt;-</span> <span class="fu">var</span>(X_t_samples)</span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>theoretical_mean <span class="ot">&lt;-</span> lambda <span class="sc">*</span> t <span class="sc">*</span> alpha <span class="sc">*</span> beta</span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>theoretical_variance <span class="ot">&lt;-</span> lambda <span class="sc">*</span> t <span class="sc">*</span> (alpha <span class="sc">*</span> beta<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> alpha<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> beta<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;估计均值: &quot;</span>, estimated_mean, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 估计均值:  179.9705</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;理论均值: &quot;</span>, theoretical_mean, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 理论均值:  180</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;估计方差: &quot;</span>, estimated_variance, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 估计方差:  1388.76</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;理论方差: &quot;</span>, theoretical_variance, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 理论方差:  1440</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="dv">4</span>  <span class="co"># 泊松过程参数 λ</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="dv">10</span>      <span class="co"># 时间 t</span></span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="dv">4</span>   <span class="co"># 伽马分布形状参数</span></span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="dv">3</span>    <span class="co"># 伽马分布尺度参数</span></span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a>X_t_samples <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n_simulations, <span class="fu">simulate_compound_poisson_gamma</span>(lambda, t, alpha, beta))</span>
+<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a>estimated_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(X_t_samples)</span>
+<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a>estimated_variance <span class="ot">&lt;-</span> <span class="fu">var</span>(X_t_samples)</span>
+<span id="cb22-8"><a href="#cb22-8" tabindex="-1"></a>theoretical_mean <span class="ot">&lt;-</span> lambda <span class="sc">*</span> t <span class="sc">*</span> alpha <span class="sc">*</span> beta</span>
+<span id="cb22-9"><a href="#cb22-9" tabindex="-1"></a>theoretical_variance <span class="ot">&lt;-</span> lambda <span class="sc">*</span> t <span class="sc">*</span> (alpha <span class="sc">*</span> beta<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> alpha<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> beta<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb22-10"><a href="#cb22-10" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;估计均值: &quot;</span>, estimated_mean, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 估计均值:  479.7184</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;理论均值: &quot;</span>, theoretical_mean, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 理论均值:  480</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;估计方差: &quot;</span>, estimated_variance, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 估计方差:  7060.882</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;理论方差: &quot;</span>, theoretical_variance, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 理论方差:  7200</code></pre>
+<div id="代码说明" class="section level4">
+<h4>代码说明：</h4>
+<ul>
+<li><p><strong>泊松过程</strong>：使用 生成泊松过程的样本 <span class="math inline">\(N(t)\)</span>，其中泊松过程的参数为 <span class="math inline">\(\lambda \times t\)</span>。</p></li>
+<li><p><strong>伽马分布</strong>：使用 生成独立同分布的伽马随机变量
+<span class="math inline">\(Y_i\)</span>，形状参数为 <span class="math inline">\(\alpha\)</span>，尺度参数为 <span class="math inline">\(\beta\)</span>。</p></li>
+<li><p><strong>复合泊松过程的计算</strong>：对于每个模拟，如果 <span class="math inline">\(N(t) &gt; 0\)</span>，计算 <span class="math inline">\(X(t) = \sum_{i=1}^{N(t)} Y_i\)</span>，否则 <span class="math inline">\(X(t) = 0\)</span>。</p></li>
+<li><p><strong>多次模拟</strong>：通过 函数模拟多个复合泊松过程，计算
+<span class="math inline">\(X(t)\)</span> 的样本均值和方差。</p></li>
+<li><p><strong>理论值</strong>：根据题目中的提示，理论均值为 <span class="math inline">\(\lambda t E[Y_1] = \lambda t \alpha
+\beta\)</span>，理论方差为 <span class="math inline">\(\lambda t
+E[Y_1^2] = \lambda t (\alpha \beta^2 + \alpha^2
+\beta^2)\)</span>。推导过程如下：</p></li>
+</ul>
+<p><br><br></p>
+</div>
+<div id="复合泊松过程的定义" class="section level4">
+<h4>1. 复合泊松过程的定义：</h4>
+<p>复合泊松过程 <span class="math inline">\(X(t)\)</span> 可以表示为：
+<span class="math inline">\(X(t) = \sum_{i=1}^{N(t)} Y_i\)</span> .
+其中： <span class="math inline">\(N(t)\)</span> 是泊松过程，参数为
+<span class="math inline">\(\lambda t\)</span>，即 <span class="math inline">\(N(t) \sim \text{Poisson}(\lambda t)\)</span>。
+<span class="math inline">\(Y_1, Y_2, \dots, Y_{N(t)}\)</span>
+是独立同分布的随机变量，且与 <span class="math inline">\(N(t)\)</span>
+相互独立。</p>
+</div>
+<div id="期望的推导" class="section level4">
+<h4>2. 期望的推导:</h4>
+<p>根据复合泊松过程的定义，<span class="math inline">\(X(t)\)</span>
+是一个随机和。利用条件期望，我们可以先给定 <span class="math inline">\(N(t) = n\)</span>，再取期望： <span class="math inline">\(E[X(t) \mid N(t) = n] = E\left[\sum_{i=1}^{n} Y_i
+\right] = n E[Y_1]\)</span></p>
+<p>再对 <span class="math inline">\(N(t)\)</span> 取期望： <span class="math inline">\(E[X(t)] = E[E[X(t) \mid N(t)]] = E[N(t)]
+E[Y_1]\)</span></p>
+<p>泊松过程的期望为 <span class="math inline">\(E[N(t)] = \lambda
+t\)</span>，因此有： <span class="math inline">\(E[X(t)] = \lambda t
+E[Y_1]\)</span></p>
+<p>对于 <span class="math inline">\(Y_i\)</span>
+服从伽马分布的情形，<span class="math inline">\(E[Y_1] = \alpha
+\beta\)</span>，所以： <span class="math inline">\(E[X(t)] = \lambda t
+\alpha \beta\)</span></p>
+</div>
+<div id="方差的推导" class="section level4">
+<h4>3. 方差的推导：</h4>
+<p>使用条件方差公式来推导 <span class="math inline">\(X(t)\)</span>
+的方差：</p>
+<p><span class="math inline">\(\text{Var}(X(t)) = E[\text{Var}(X(t) \mid
+N(t))] + \text{Var}(E[X(t) \mid N(t)])\)</span></p>
+<p>第一项：</p>
+<p><span class="math inline">\(E[\text{Var}(X(t) \mid N(t) = n)] = E[n
+\cdot \text{Var}(Y_1)] = E[N(t)] \text{Var}(Y_1)\)</span></p>
+<p>伽马分布 <span class="math inline">\(Y_1\)</span> 的方差为 <span class="math inline">\(\text{Var}(Y_1) = \alpha
+\beta^2\)</span>，所以第一项为：</p>
+<p><span class="math inline">\(E[N(t)] \text{Var}(Y_1) = \lambda t
+\alpha \beta^2\)</span></p>
+<p>第二项：</p>
+<p><span class="math inline">\(\text{Var}(E[X(t) \mid N(t)]) =
+\text{Var}(N(t) E[Y_1]) = \text{Var}(N(t)) (E[Y_1])^2\)</span></p>
+<p>由于泊松过程的方差等于期望，即 <span class="math inline">\(\text{Var}(N(t)) = \lambda
+t\)</span>，因此第二项为：</p>
+<p><span class="math inline">\(\lambda t (E[Y_1])^2 = \lambda t (\alpha
+\beta)^2\)</span></p>
+<p>将两部分相加，得到 <span class="math inline">\(X(t)\)</span>
+的方差：</p>
+<p><span class="math inline">\(\text{Var}(X(t)) = \lambda t \alpha
+\beta^2 + \lambda t (\alpha \beta)^2 = \lambda t (\alpha \beta^2 +
+\alpha^2 \beta^2)\)</span></p>
+</div>
+</div>
+</div>
+<div id="hw2" class="section level1">
+<h1>hw2</h1>
+<div id="section-3" class="section level2">
+<h2>5.4：</h2>
+<p>编写一个函数来计算 Beta(3, 3) 累积分布函数 (CDF)
+的蒙特卡洛估计，并使用该函数估计 F(x) 对于 x = 0.1, 0.2, …, 0.9
+。将这些估计值与 R 中 pbeta 函数返回的值进行比较。</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="co"># 设置随机种子，确保结果可重复</span></span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a><span class="co"># 定义函数 MonteCarloBeta，用于计算 Beta(3,3) 分布的 CDF 的蒙特卡洛估计</span></span>
+<span id="cb30-5"><a href="#cb30-5" tabindex="-1"></a>MonteCarloBeta <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">n_sim =</span> <span class="dv">10000</span>) {</span>
+<span id="cb30-6"><a href="#cb30-6" tabindex="-1"></a>  <span class="co"># 从 Beta(3,3) 分布中生成 n_sim 个随机样本</span></span>
+<span id="cb30-7"><a href="#cb30-7" tabindex="-1"></a>  beta_samples <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n_sim, <span class="at">shape1 =</span> <span class="dv">3</span>, <span class="at">shape2 =</span> <span class="dv">3</span>)</span>
+<span id="cb30-8"><a href="#cb30-8" tabindex="-1"></a>  </span>
+<span id="cb30-9"><a href="#cb30-9" tabindex="-1"></a>  <span class="co"># 计算 F(x) 的蒙特卡洛估计，即随机样本中小于等于 x 的比例</span></span>
+<span id="cb30-10"><a href="#cb30-10" tabindex="-1"></a>  F_x_hat <span class="ot">&lt;-</span> <span class="fu">mean</span>(beta_samples <span class="sc">&lt;=</span> x)</span>
+<span id="cb30-11"><a href="#cb30-11" tabindex="-1"></a>  </span>
+<span id="cb30-12"><a href="#cb30-12" tabindex="-1"></a>  <span class="fu">return</span>(F_x_hat)</span>
+<span id="cb30-13"><a href="#cb30-13" tabindex="-1"></a>}</span>
+<span id="cb30-14"><a href="#cb30-14" tabindex="-1"></a></span>
+<span id="cb30-15"><a href="#cb30-15" tabindex="-1"></a><span class="co"># 要计算的 x 值</span></span>
+<span id="cb30-16"><a href="#cb30-16" tabindex="-1"></a>x_values <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.1</span>, <span class="fl">0.9</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
+<span id="cb30-17"><a href="#cb30-17" tabindex="-1"></a></span>
+<span id="cb30-18"><a href="#cb30-18" tabindex="-1"></a><span class="co"># 初始化一个空的数据框来存储结果</span></span>
+<span id="cb30-19"><a href="#cb30-19" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x_values, <span class="at">MonteCarlo =</span> <span class="cn">NA</span>, <span class="at">pbeta =</span> <span class="cn">NA</span>, <span class="at">Difference =</span> <span class="cn">NA</span>)</span>
+<span id="cb30-20"><a href="#cb30-20" tabindex="-1"></a></span>
+<span id="cb30-21"><a href="#cb30-21" tabindex="-1"></a><span class="co"># 进行 Monte Carlo 估计和使用 pbeta 函数的比较</span></span>
+<span id="cb30-22"><a href="#cb30-22" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x_values)) {</span>
+<span id="cb30-23"><a href="#cb30-23" tabindex="-1"></a>  <span class="co"># 计算 Monte Carlo 估计</span></span>
+<span id="cb30-24"><a href="#cb30-24" tabindex="-1"></a>  results<span class="sc">$</span>MonteCarlo[i] <span class="ot">&lt;-</span> <span class="fu">MonteCarloBeta</span>(x_values[i])</span>
+<span id="cb30-25"><a href="#cb30-25" tabindex="-1"></a>  </span>
+<span id="cb30-26"><a href="#cb30-26" tabindex="-1"></a>  <span class="co"># 使用 pbeta 函数计算 Beta(3,3) 的精确 CDF 值</span></span>
+<span id="cb30-27"><a href="#cb30-27" tabindex="-1"></a>  results<span class="sc">$</span>pbeta[i] <span class="ot">&lt;-</span> <span class="fu">pbeta</span>(x_values[i], <span class="at">shape1 =</span> <span class="dv">3</span>, <span class="at">shape2 =</span> <span class="dv">3</span>)</span>
+<span id="cb30-28"><a href="#cb30-28" tabindex="-1"></a>  </span>
+<span id="cb30-29"><a href="#cb30-29" tabindex="-1"></a>  <span class="co"># 计算 Monte Carlo 估计与 pbeta 值的差异</span></span>
+<span id="cb30-30"><a href="#cb30-30" tabindex="-1"></a>  results<span class="sc">$</span>Difference[i] <span class="ot">&lt;-</span> <span class="fu">abs</span>(results<span class="sc">$</span>MonteCarlo[i] <span class="sc">-</span> results<span class="sc">$</span>pbeta[i])</span>
+<span id="cb30-31"><a href="#cb30-31" tabindex="-1"></a>}</span>
+<span id="cb30-32"><a href="#cb30-32" tabindex="-1"></a></span>
+<span id="cb30-33"><a href="#cb30-33" tabindex="-1"></a><span class="co"># 打印结果</span></span>
+<span id="cb30-34"><a href="#cb30-34" tabindex="-1"></a><span class="fu">print</span>(results)</span></code></pre></div>
+<pre><code>##     x MonteCarlo   pbeta Difference
+## 1 0.1     0.0097 0.00856    0.00114
+## 2 0.2     0.0614 0.05792    0.00348
+## 3 0.3     0.1642 0.16308    0.00112
+## 4 0.4     0.3178 0.31744    0.00036
+## 5 0.5     0.4948 0.50000    0.00520
+## 6 0.6     0.6761 0.68256    0.00646
+## 7 0.7     0.8372 0.83692    0.00028
+## 8 0.8     0.9379 0.94208    0.00418
+## 9 0.9     0.9922 0.99144    0.00076</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="co"># 画图比较 Monte Carlo 估计和 pbeta 函数的值</span></span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a><span class="fu">plot</span>(x_values, results<span class="sc">$</span>MonteCarlo, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb32-3"><a href="#cb32-3" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;CDF&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Monte Carlo vs. pbeta CDF Estimation&quot;</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" tabindex="-1"></a><span class="fu">lines</span>(x_values, results<span class="sc">$</span>pbeta, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">pch =</span> <span class="dv">16</span>)</span>
+<span id="cb32-5"><a href="#cb32-5" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Monte Carlo Estimate&quot;</span>, <span class="st">&quot;pbeta Value&quot;</span>), <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">pch =</span> <span class="dv">16</span>)</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,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" /><!-- --></p>
+<div id="代码说明-1" class="section level4">
+<h4>代码说明：</h4>
+<ul>
+<li><strong>1.
+设定随机种子</strong>：用于确保每次运行代码时，生成的随机数都是一致的，从而确保结果的可重复性。</li>
+<li><strong>2. 定义 MonteCarloBeta 函数</strong>： 通过蒙特卡洛方法估计
+Beta(3,3) 累积分布函数 (CDF) 的值。</li>
+<li><strong>3. 生成待估计的 x 值序列</strong>： 使用 seq(0.1, 0.9, by =
+0.1)生成一个从0.1到0.9的数列，用于计算每个点的CDF值。</li>
+<li><strong>4. 初始化结果数据框</strong>： 创建一个名为 results
+的数据框，包含列x, MonteCarlo, pbeta, Difference.</li>
+<li><strong>5. 循环计算蒙特卡洛估计和 pbeta 精确值</strong>： 针对每个 x
+值，分别使用蒙特卡洛方法和 pbeta 函数来计算 Beta(3,3)
+的CDF值，并比较两者的差异。</li>
+<li><strong>6. 结果展示</strong>：输出并可视化蒙特卡洛估计值和 pbeta
+函数的精确值，以便直观比较两者之间的差异。</li>
+</ul>
+<p><br><br></p>
+</div>
+</div>
+<div id="section-4" class="section level2">
+<h2>5.9：</h2>
+<p>Rayleigh密度为： <span class="math display">\[
+f(x) = \frac{x}{\sigma^2} e^{-x^2/(2\sigma^2)}, \quad x \geq 0, \sigma
+&gt; 0.
+\]</span>
+编写一个函数来生成来自Rayleigh(σ)分布的样本，使用对偶变量。对于 与独立的
+<span class="math inline">\(X_1\)</span> , <span class="math inline">\(X_2\)</span> 相比，方差减少了百分之多少？</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="co"># 设置随机种子以确保可重复性</span></span>
+<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" tabindex="-1"></a><span class="co"># Rayleigh分布的随机变量生成函数</span></span>
+<span id="cb33-5"><a href="#cb33-5" tabindex="-1"></a><span class="co"># 生成Rayleigh(σ)分布的样本</span></span>
+<span id="cb33-6"><a href="#cb33-6" tabindex="-1"></a>rayleigh_sample <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">sigma =</span> <span class="dv">1</span>) {</span>
+<span id="cb33-7"><a href="#cb33-7" tabindex="-1"></a>  <span class="co"># 标准正态分布样本</span></span>
+<span id="cb33-8"><a href="#cb33-8" tabindex="-1"></a>  z <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> sigma)</span>
+<span id="cb33-9"><a href="#cb33-9" tabindex="-1"></a>  </span>
+<span id="cb33-10"><a href="#cb33-10" tabindex="-1"></a>  <span class="co"># Rayleigh分布样本（z^2 开方）</span></span>
+<span id="cb33-11"><a href="#cb33-11" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(z<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb33-12"><a href="#cb33-12" tabindex="-1"></a>  </span>
+<span id="cb33-13"><a href="#cb33-13" tabindex="-1"></a>  <span class="fu">return</span>(x)</span>
+<span id="cb33-14"><a href="#cb33-14" tabindex="-1"></a>}</span>
+<span id="cb33-15"><a href="#cb33-15" tabindex="-1"></a></span>
+<span id="cb33-16"><a href="#cb33-16" tabindex="-1"></a><span class="co"># 生成使用对偶变量的Rayleigh样本</span></span>
+<span id="cb33-17"><a href="#cb33-17" tabindex="-1"></a><span class="co"># 使用对偶变量生成样本并计算平均值</span></span>
+<span id="cb33-18"><a href="#cb33-18" tabindex="-1"></a>rayleigh_antithetic <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">sigma =</span> <span class="dv">1</span>) {</span>
+<span id="cb33-19"><a href="#cb33-19" tabindex="-1"></a>  <span class="co"># 生成均匀分布样本</span></span>
+<span id="cb33-20"><a href="#cb33-20" tabindex="-1"></a>  u <span class="ot">&lt;-</span> <span class="fu">runif</span>(n)</span>
+<span id="cb33-21"><a href="#cb33-21" tabindex="-1"></a>  </span>
+<span id="cb33-22"><a href="#cb33-22" tabindex="-1"></a>  <span class="co"># 使用对偶变量：生成 u 和 1-u</span></span>
+<span id="cb33-23"><a href="#cb33-23" tabindex="-1"></a>  x1 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> sigma<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">log</span>(u))</span>
+<span id="cb33-24"><a href="#cb33-24" tabindex="-1"></a>  x2 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> sigma<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">log</span>(<span class="dv">1</span> <span class="sc">-</span> u))</span>
+<span id="cb33-25"><a href="#cb33-25" tabindex="-1"></a>  </span>
+<span id="cb33-26"><a href="#cb33-26" tabindex="-1"></a>  <span class="co"># 对偶变量的均值</span></span>
+<span id="cb33-27"><a href="#cb33-27" tabindex="-1"></a>  avg_antithetic <span class="ot">&lt;-</span> (x1 <span class="sc">+</span> x2) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb33-28"><a href="#cb33-28" tabindex="-1"></a>  </span>
+<span id="cb33-29"><a href="#cb33-29" tabindex="-1"></a>  <span class="fu">return</span>(avg_antithetic)</span>
+<span id="cb33-30"><a href="#cb33-30" tabindex="-1"></a>}</span>
+<span id="cb33-31"><a href="#cb33-31" tabindex="-1"></a></span>
+<span id="cb33-32"><a href="#cb33-32" tabindex="-1"></a><span class="co"># 生成独立Rayleigh样本并计算均值</span></span>
+<span id="cb33-33"><a href="#cb33-33" tabindex="-1"></a>rayleigh_independent <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">sigma =</span> <span class="dv">1</span>) {</span>
+<span id="cb33-34"><a href="#cb33-34" tabindex="-1"></a>  x1 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> sigma<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">log</span>(<span class="fu">runif</span>(n)))</span>
+<span id="cb33-35"><a href="#cb33-35" tabindex="-1"></a>  x2 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="sc">-</span><span class="dv">2</span> <span class="sc">*</span> sigma<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> <span class="fu">log</span>(<span class="fu">runif</span>(n)))</span>
+<span id="cb33-36"><a href="#cb33-36" tabindex="-1"></a>  </span>
+<span id="cb33-37"><a href="#cb33-37" tabindex="-1"></a>  <span class="co"># 独立样本的均值</span></span>
+<span id="cb33-38"><a href="#cb33-38" tabindex="-1"></a>  avg_independent <span class="ot">&lt;-</span> (x1 <span class="sc">+</span> x2) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb33-39"><a href="#cb33-39" tabindex="-1"></a>  </span>
+<span id="cb33-40"><a href="#cb33-40" tabindex="-1"></a>  <span class="fu">return</span>(avg_independent)</span>
+<span id="cb33-41"><a href="#cb33-41" tabindex="-1"></a>}</span>
+<span id="cb33-42"><a href="#cb33-42" tabindex="-1"></a></span>
+<span id="cb33-43"><a href="#cb33-43" tabindex="-1"></a><span class="co"># 样本数量</span></span>
+<span id="cb33-44"><a href="#cb33-44" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb33-45"><a href="#cb33-45" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb33-46"><a href="#cb33-46" tabindex="-1"></a></span>
+<span id="cb33-47"><a href="#cb33-47" tabindex="-1"></a><span class="co"># 计算使用对偶变量的样本均值</span></span>
+<span id="cb33-48"><a href="#cb33-48" tabindex="-1"></a>antithetic_samples <span class="ot">&lt;-</span> <span class="fu">rayleigh_antithetic</span>(n, sigma)</span>
+<span id="cb33-49"><a href="#cb33-49" tabindex="-1"></a><span class="co"># 计算独立样本的均值</span></span>
+<span id="cb33-50"><a href="#cb33-50" tabindex="-1"></a>independent_samples <span class="ot">&lt;-</span> <span class="fu">rayleigh_independent</span>(n, sigma)</span>
+<span id="cb33-51"><a href="#cb33-51" tabindex="-1"></a></span>
+<span id="cb33-52"><a href="#cb33-52" tabindex="-1"></a><span class="co"># 计算方差</span></span>
+<span id="cb33-53"><a href="#cb33-53" tabindex="-1"></a>var_antithetic <span class="ot">&lt;-</span> <span class="fu">var</span>(antithetic_samples)</span>
+<span id="cb33-54"><a href="#cb33-54" tabindex="-1"></a>var_independent <span class="ot">&lt;-</span> <span class="fu">var</span>(independent_samples)</span>
+<span id="cb33-55"><a href="#cb33-55" tabindex="-1"></a></span>
+<span id="cb33-56"><a href="#cb33-56" tabindex="-1"></a><span class="co"># 计算方差减少的百分比</span></span>
+<span id="cb33-57"><a href="#cb33-57" tabindex="-1"></a>percent_reduction <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> (var_independent <span class="sc">-</span> var_antithetic) <span class="sc">/</span> var_independent</span>
+<span id="cb33-58"><a href="#cb33-58" tabindex="-1"></a></span>
+<span id="cb33-59"><a href="#cb33-59" tabindex="-1"></a><span class="co"># 输出结果</span></span>
+<span id="cb33-60"><a href="#cb33-60" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;使用对偶变量的样本方差:&quot;</span>, var_antithetic, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 使用对偶变量的样本方差: 0.01121846</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;独立样本的方差:&quot;</span>, var_independent, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 独立样本的方差: 0.2186136</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;方差减少百分比:&quot;</span>, percent_reduction, <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 方差减少百分比: 94.86836 %</code></pre>
+<div id="代码说明-2" class="section level4">
+<h4>代码说明：</h4>
+<ul>
+<li><strong>1. 生成
+Rayleigh分布样本</strong>：通过对标准正态分布的平方开根号生成Rayleigh分布的随机样本。</li>
+<li><strong>2. 对偶变量法</strong>： 使用对偶变量 u和
+1−u生成两个相关的样本，并取平均以减少方差。</li>
+<li><strong>3.
+独立样本法</strong>：生成两个独立的Rayleigh分布样本，并取平均作为对照。</li>
+<li><strong>4.
+方差比较</strong>：通过计算两种方法生成样本的方差，分析对偶变量方法减少了多少方差。</li>
+</ul>
+<p><br><br></p>
+</div>
+</div>
+<div id="section-5" class="section level2">
+<h2>5.13：</h2>
+<p>找到两个重要性函数 <span class="math inline">\(f_1\)</span> 和 <span class="math inline">\(f_2\)</span>，它们在 <span class="math inline">\((1, \infty)\)</span> 上有定义，并且与 <span class="math display">\[
+g(x) = \frac{x^2}{\sqrt{2\pi}} e^{-x^2/2}, \quad x &gt; 1
+\]</span> 接近。哪个重要性函数 <span class="math inline">\(f_1\)</span>
+或 <span class="math inline">\(f_2\)</span>
+在估计下述积分时应产生较小的方差？ <span class="math display">\[
+\int_1^{\infty} \frac{x^2}{\sqrt{2\pi}} e^{-x^2/2} dx
+\]</span> 请解释。</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="co"># 设置随机种子以确保可重复性</span></span>
+<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" tabindex="-1"></a><span class="co"># 定义目标函数 g(x)</span></span>
+<span id="cb39-5"><a href="#cb39-5" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb39-6"><a href="#cb39-6" tabindex="-1"></a>  (x<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">2</span> <span class="sc">*</span> pi)) <span class="sc">*</span> <span class="fu">exp</span>(<span class="sc">-</span>x<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="dv">2</span>)</span>
+<span id="cb39-7"><a href="#cb39-7" tabindex="-1"></a>}</span>
+<span id="cb39-8"><a href="#cb39-8" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="#cb39-9" tabindex="-1"></a><span class="co"># 定义重要性函数 f1(x): 正态分布 N(2, 1)</span></span>
+<span id="cb39-10"><a href="#cb39-10" tabindex="-1"></a>f1_density <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb39-11"><a href="#cb39-11" tabindex="-1"></a>  <span class="fu">ifelse</span>(x <span class="sc">&gt;</span> <span class="dv">1</span>, <span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="dv">2</span>, <span class="at">sd =</span> <span class="dv">1</span>), <span class="dv">0</span>)</span>
+<span id="cb39-12"><a href="#cb39-12" tabindex="-1"></a>}</span>
+<span id="cb39-13"><a href="#cb39-13" tabindex="-1"></a></span>
+<span id="cb39-14"><a href="#cb39-14" tabindex="-1"></a><span class="co"># 定义重要性函数 f2(x): 指数分布 Exp(1)</span></span>
+<span id="cb39-15"><a href="#cb39-15" tabindex="-1"></a>f2_density <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb39-16"><a href="#cb39-16" tabindex="-1"></a>  <span class="fu">ifelse</span>(x <span class="sc">&gt;</span> <span class="dv">1</span>, <span class="fu">dexp</span>(x <span class="sc">-</span> <span class="dv">1</span>, <span class="at">rate =</span> <span class="dv">1</span>), <span class="dv">0</span>)</span>
+<span id="cb39-17"><a href="#cb39-17" tabindex="-1"></a>}</span>
+<span id="cb39-18"><a href="#cb39-18" tabindex="-1"></a></span>
+<span id="cb39-19"><a href="#cb39-19" tabindex="-1"></a><span class="co"># 采样自 f1(x)</span></span>
+<span id="cb39-20"><a href="#cb39-20" tabindex="-1"></a>f1_sample <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
+<span id="cb39-21"><a href="#cb39-21" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">2</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb39-22"><a href="#cb39-22" tabindex="-1"></a>  x[x <span class="sc">&gt;</span> <span class="dv">1</span>] <span class="co"># 只保留 x &gt; 1 的部分</span></span>
+<span id="cb39-23"><a href="#cb39-23" tabindex="-1"></a>}</span>
+<span id="cb39-24"><a href="#cb39-24" tabindex="-1"></a></span>
+<span id="cb39-25"><a href="#cb39-25" tabindex="-1"></a><span class="co"># 采样自 f2(x)</span></span>
+<span id="cb39-26"><a href="#cb39-26" tabindex="-1"></a>f2_sample <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
+<span id="cb39-27"><a href="#cb39-27" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">rexp</span>(n, <span class="at">rate =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="dv">1</span> <span class="co"># 将指数偏移以从 x = 1 开始</span></span>
+<span id="cb39-28"><a href="#cb39-28" tabindex="-1"></a>  <span class="fu">return</span>(x)</span>
+<span id="cb39-29"><a href="#cb39-29" tabindex="-1"></a>}</span>
+<span id="cb39-30"><a href="#cb39-30" tabindex="-1"></a></span>
+<span id="cb39-31"><a href="#cb39-31" tabindex="-1"></a><span class="co"># 使用重要性采样估计积分</span></span>
+<span id="cb39-32"><a href="#cb39-32" tabindex="-1"></a>importance_sampling <span class="ot">&lt;-</span> <span class="cf">function</span>(n, sample_func, f_density) {</span>
+<span id="cb39-33"><a href="#cb39-33" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">sample_func</span>(n)</span>
+<span id="cb39-34"><a href="#cb39-34" tabindex="-1"></a>  weights <span class="ot">&lt;-</span> <span class="fu">g</span>(x) <span class="sc">/</span> <span class="fu">f_density</span>(x)</span>
+<span id="cb39-35"><a href="#cb39-35" tabindex="-1"></a>  estimate <span class="ot">&lt;-</span> <span class="fu">mean</span>(weights)</span>
+<span id="cb39-36"><a href="#cb39-36" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">estimate =</span> estimate, <span class="at">variance =</span> <span class="fu">var</span>(weights)))</span>
+<span id="cb39-37"><a href="#cb39-37" tabindex="-1"></a>}</span>
+<span id="cb39-38"><a href="#cb39-38" tabindex="-1"></a></span>
+<span id="cb39-39"><a href="#cb39-39" tabindex="-1"></a><span class="co"># 样本数量</span></span>
+<span id="cb39-40"><a href="#cb39-40" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb39-41"><a href="#cb39-41" tabindex="-1"></a></span>
+<span id="cb39-42"><a href="#cb39-42" tabindex="-1"></a><span class="co"># 估计使用 f1 作为重要性函数</span></span>
+<span id="cb39-43"><a href="#cb39-43" tabindex="-1"></a>result_f1 <span class="ot">&lt;-</span> <span class="fu">importance_sampling</span>(n, f1_sample, f1_density)</span>
+<span id="cb39-44"><a href="#cb39-44" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;使用 f1 (N(2, 1)) 的估计值:&quot;</span>, result_f1<span class="sc">$</span>estimate, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 使用 f1 (N(2, 1)) 的估计值: 0.4752086</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;使用 f1 的方差:&quot;</span>, result_f1<span class="sc">$</span>variance, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 使用 f1 的方差: 0.08780763</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a><span class="co"># 估计使用 f2 作为重要性函数</span></span>
+<span id="cb43-2"><a href="#cb43-2" tabindex="-1"></a>result_f2 <span class="ot">&lt;-</span> <span class="fu">importance_sampling</span>(n, f2_sample, f2_density)</span>
+<span id="cb43-3"><a href="#cb43-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;使用 f2 (Exp(1)) 的估计值:&quot;</span>, result_f2<span class="sc">$</span>estimate, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 使用 f2 (Exp(1)) 的估计值: 0.4013249</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;使用 f2 的方差:&quot;</span>, result_f2<span class="sc">$</span>variance, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 使用 f2 的方差: 0.02513175</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" tabindex="-1"></a><span class="co"># 方差比较</span></span>
+<span id="cb47-2"><a href="#cb47-2" tabindex="-1"></a>variance_reduction <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> (result_f1<span class="sc">$</span>variance <span class="sc">-</span> result_f2<span class="sc">$</span>variance) <span class="sc">/</span> result_f1<span class="sc">$</span>variance</span>
+<span id="cb47-3"><a href="#cb47-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;方差减少百分比:&quot;</span>, variance_reduction, <span class="st">&quot;%</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<pre><code>## 方差减少百分比: 71.37862 %</code></pre>
+<div id="代码说明-3" class="section level4">
+<h4>代码说明：</h4>
+<ul>
+<li><strong>1.
+目标</strong>：通过重要性采样方法来估计给定的积分，并比较不同重要性函数在估计中的表现。</li>
+<li><strong>2. 选择重要性函数</strong>：
+我们选择了两个常见的重要性函数<span class="math inline">\(f_1(x)\)</span>和<span class="math inline">\(f_2(x)\)</span>，其中<span class="math inline">\(f_1(x)\)</span>是正态分布N(2,1)，生成的样本更加集中在<span class="math inline">\(x&gt;1\)</span>附近；<span class="math inline">\(f_2(x)\)</span>是指数分布Exp(1)，生成的样本较大程度覆盖了<span class="math inline">\(x&gt;1\)</span>的范围。</li>
+<li><strong>3.
+计算方差</strong>：通过计算两个重要性函数生成样本的方差，判断哪个函数能更有效地减少方差。</li>
+<li><strong>4.
+结果分析</strong>：最终结果展示了估计的积分值以及通过使用不同重要性函数的方差减少情况，发现了<span class="math inline">\(f_2(x)\)</span>重要性函数在重要性采样中的方差更小。</li>
+</ul>
+<p><br><br></p>
+</div>
+</div>
+<div id="ppt中的作业" class="section level2">
+<h2>PPT中的作业：</h2>
+<p>Monte Carlo实验：</p>
+<p>1.对于 <span class="math inline">\(n = 10^4, 2 \times 10^4, 4 \times
+10^4, 6 \times 10^4, 8 \times
+10^4\)</span>，应用快速排序算法到随机排列的数字 <span class="math inline">\(1, \dots, n\)</span>。</p>
+<p>2.计算平均100次模拟的计算时间，记为 <span class="math inline">\(a_n\)</span>。</p>
+<p>3.对 <span class="math inline">\(a_n\)</span> 回归 <span class="math inline">\(t_n :=
+n\log(n)\)</span>，并图形化展示结果（散点图和回归线）。</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" tabindex="-1"></a><span class="co"># 加载所需的库</span></span>
+<span id="cb49-2"><a href="#cb49-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb49-3"><a href="#cb49-3" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" tabindex="-1"></a><span class="co"># 定义快速排序的函数</span></span>
+<span id="cb49-5"><a href="#cb49-5" tabindex="-1"></a>quick_sort <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb49-6"><a href="#cb49-6" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">length</span>(x) <span class="sc">&lt;=</span> <span class="dv">1</span>) {</span>
+<span id="cb49-7"><a href="#cb49-7" tabindex="-1"></a>    <span class="fu">return</span>(x)</span>
+<span id="cb49-8"><a href="#cb49-8" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb49-9"><a href="#cb49-9" tabindex="-1"></a>    pivot <span class="ot">&lt;-</span> x[<span class="dv">1</span>]</span>
+<span id="cb49-10"><a href="#cb49-10" tabindex="-1"></a>    less <span class="ot">&lt;-</span> x[x <span class="sc">&lt;</span> pivot]</span>
+<span id="cb49-11"><a href="#cb49-11" tabindex="-1"></a>    equal <span class="ot">&lt;-</span> x[x <span class="sc">==</span> pivot]</span>
+<span id="cb49-12"><a href="#cb49-12" tabindex="-1"></a>    greater <span class="ot">&lt;-</span> x[x <span class="sc">&gt;</span> pivot]</span>
+<span id="cb49-13"><a href="#cb49-13" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">c</span>(<span class="fu">quick_sort</span>(less), equal, <span class="fu">quick_sort</span>(greater)))</span>
+<span id="cb49-14"><a href="#cb49-14" tabindex="-1"></a>  }</span>
+<span id="cb49-15"><a href="#cb49-15" tabindex="-1"></a>}</span>
+<span id="cb49-16"><a href="#cb49-16" tabindex="-1"></a></span>
+<span id="cb49-17"><a href="#cb49-17" tabindex="-1"></a><span class="co"># Monte Carlo实验</span></span>
+<span id="cb49-18"><a href="#cb49-18" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># 设置随机种子，确保结果可重复</span></span>
+<span id="cb49-19"><a href="#cb49-19" tabindex="-1"></a></span>
+<span id="cb49-20"><a href="#cb49-20" tabindex="-1"></a><span class="co"># 定义不同的n值</span></span>
+<span id="cb49-21"><a href="#cb49-21" tabindex="-1"></a>n_values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>, <span class="dv">2</span> <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>, <span class="dv">4</span> <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>, <span class="dv">6</span> <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>, <span class="dv">8</span> <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">4</span>)</span>
+<span id="cb49-22"><a href="#cb49-22" tabindex="-1"></a></span>
+<span id="cb49-23"><a href="#cb49-23" tabindex="-1"></a><span class="co"># 模拟次数</span></span>
+<span id="cb49-24"><a href="#cb49-24" tabindex="-1"></a>n_simulations <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb49-25"><a href="#cb49-25" tabindex="-1"></a></span>
+<span id="cb49-26"><a href="#cb49-26" tabindex="-1"></a><span class="co"># 创建一个空的数据框来存储结果</span></span>
+<span id="cb49-27"><a href="#cb49-27" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">n =</span> <span class="fu">integer</span>(), <span class="at">avg_time =</span> <span class="fu">numeric</span>())</span>
+<span id="cb49-28"><a href="#cb49-28" tabindex="-1"></a></span>
+<span id="cb49-29"><a href="#cb49-29" tabindex="-1"></a><span class="co"># 进行Monte Carlo模拟</span></span>
+<span id="cb49-30"><a href="#cb49-30" tabindex="-1"></a><span class="cf">for</span> (n <span class="cf">in</span> n_values) {</span>
+<span id="cb49-31"><a href="#cb49-31" tabindex="-1"></a>  times <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_simulations)</span>
+<span id="cb49-32"><a href="#cb49-32" tabindex="-1"></a>  </span>
+<span id="cb49-33"><a href="#cb49-33" tabindex="-1"></a>  <span class="co"># 对每个n进行100次模拟</span></span>
+<span id="cb49-34"><a href="#cb49-34" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_simulations) {</span>
+<span id="cb49-35"><a href="#cb49-35" tabindex="-1"></a>    <span class="co"># 生成1到n的随机排列</span></span>
+<span id="cb49-36"><a href="#cb49-36" tabindex="-1"></a>    random_numbers <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n)</span>
+<span id="cb49-37"><a href="#cb49-37" tabindex="-1"></a>    </span>
+<span id="cb49-38"><a href="#cb49-38" tabindex="-1"></a>    <span class="co"># 计算排序的时间</span></span>
+<span id="cb49-39"><a href="#cb49-39" tabindex="-1"></a>    start_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb49-40"><a href="#cb49-40" tabindex="-1"></a>    <span class="fu">quick_sort</span>(random_numbers)  <span class="co"># 应用快速排序</span></span>
+<span id="cb49-41"><a href="#cb49-41" tabindex="-1"></a>    end_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb49-42"><a href="#cb49-42" tabindex="-1"></a>    </span>
+<span id="cb49-43"><a href="#cb49-43" tabindex="-1"></a>    <span class="co"># 记录排序时间</span></span>
+<span id="cb49-44"><a href="#cb49-44" tabindex="-1"></a>    times[i] <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">difftime</span>(end_time, start_time, <span class="at">units =</span> <span class="st">&quot;secs&quot;</span>))</span>
+<span id="cb49-45"><a href="#cb49-45" tabindex="-1"></a>  }</span>
+<span id="cb49-46"><a href="#cb49-46" tabindex="-1"></a>  </span>
+<span id="cb49-47"><a href="#cb49-47" tabindex="-1"></a>  <span class="co"># 计算平均时间</span></span>
+<span id="cb49-48"><a href="#cb49-48" tabindex="-1"></a>  avg_time <span class="ot">&lt;-</span> <span class="fu">mean</span>(times)</span>
+<span id="cb49-49"><a href="#cb49-49" tabindex="-1"></a>  </span>
+<span id="cb49-50"><a href="#cb49-50" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;平均100次模拟的计算时间:&quot;</span>, avg_time, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="st">&quot;此时的n:&quot;</span>, n, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb49-51"><a href="#cb49-51" tabindex="-1"></a>  </span>
+<span id="cb49-52"><a href="#cb49-52" tabindex="-1"></a>  <span class="co"># 保存结果</span></span>
+<span id="cb49-53"><a href="#cb49-53" tabindex="-1"></a>  results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(results, <span class="fu">data.frame</span>(<span class="at">n =</span> n, <span class="at">avg_time =</span> avg_time))</span>
+<span id="cb49-54"><a href="#cb49-54" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## 平均100次模拟的计算时间: 0.01533094 
+##  此时的n: 10000 
+## 平均100次模拟的计算时间: 0.02659541 
+##  此时的n: 20000 
+## 平均100次模拟的计算时间: 0.05206708 
+##  此时的n: 40000 
+## 平均100次模拟的计算时间: 0.07829833 
+##  此时的n: 60000 
+## 平均100次模拟的计算时间: 0.1033844 
+##  此时的n: 80000</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" tabindex="-1"></a><span class="co"># 计算 t_n = n * log(n)</span></span>
+<span id="cb51-2"><a href="#cb51-2" tabindex="-1"></a>results<span class="sc">$</span>t_n <span class="ot">&lt;-</span> results<span class="sc">$</span>n <span class="sc">*</span> <span class="fu">log</span>(results<span class="sc">$</span>n)</span>
+<span id="cb51-3"><a href="#cb51-3" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" tabindex="-1"></a><span class="co"># 回归分析：对 a_n 回归 t_n</span></span>
+<span id="cb51-5"><a href="#cb51-5" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(avg_time <span class="sc">~</span> t_n, <span class="at">data =</span> results)</span>
+<span id="cb51-6"><a href="#cb51-6" tabindex="-1"></a></span>
+<span id="cb51-7"><a href="#cb51-7" tabindex="-1"></a><span class="co"># 打印回归结果</span></span>
+<span id="cb51-8"><a href="#cb51-8" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = avg_time ~ t_n, data = results)
+## 
+## Residuals:
+##          1          2          3          4          5 
+## -0.0001049 -0.0004178  0.0003847  0.0008035 -0.0006655 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 5.373e-03  5.634e-04   9.537  0.00245 ** 
+## t_n         1.093e-07  1.036e-09 105.458 1.88e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.0006885 on 3 degrees of freedom
+## Multiple R-squared:  0.9997, Adjusted R-squared:  0.9996 
+## F-statistic: 1.112e+04 on 1 and 3 DF,  p-value: 1.88e-06</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" tabindex="-1"></a><span class="co"># 图形化展示结果，绘制散点图和回归线</span></span>
+<span id="cb53-2"><a href="#cb53-2" tabindex="-1"></a><span class="fu">ggplot</span>(results, <span class="fu">aes</span>(<span class="at">x =</span> t_n, <span class="at">y =</span> avg_time)) <span class="sc">+</span></span>
+<span id="cb53-3"><a href="#cb53-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb53-4"><a href="#cb53-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb53-5"><a href="#cb53-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Computation Time vs n log(n)&quot;</span>,</span>
+<span id="cb53-6"><a href="#cb53-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;n log(n)&quot;</span>,</span>
+<span id="cb53-7"><a href="#cb53-7" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Average Computation Time (seconds)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb53-8"><a href="#cb53-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img role="img" src="data:image/png;base64,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" /><!-- --></p>
+<div id="代码说明-4" class="section level4">
+<h4>代码说明：</h4>
+<ul>
+<li><strong>1.
+实现快速排序算法</strong>：定义了递归快速排序算法用于对随机数组进行排序。</li>
+<li><strong>2. 设置 Monte Carlo实验参数</strong>： 针对不同大小的数组 n
+进行实验，每个大小进行100次排序模拟。</li>
+<li><strong>3.
+记录并计算计算时间</strong>：通过Sys.time()记录每次排序的计算时间，并计算每个
+n 值的平均排序时间。</li>
+<li><strong>4. 回归分析</strong>：通过线性回归模型，将计算时间<span class="math inline">\(a_n\)</span>回归 <span class="math inline">\(t_n=nlog(n)\)</span>
+，验证快速排序的计算时间复杂度。</li>
+<li><strong>5.
+结果可视化</strong>：使用ggplot2绘制散点图和回归线，直观展示计算时间与<span class="math inline">\(nlog(n)\)</span>之间的线性关系。</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

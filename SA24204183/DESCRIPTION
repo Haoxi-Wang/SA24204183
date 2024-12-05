@@ -1,0 +1,17 @@
+Package: SA24204183
+Type: Package
+Title: Gaussian Mixture Model Averaging with Cross-Validation
+Version: 1.0
+Date: 2022-11-25
+Author: Wang Haoxi
+Maintainer: Wang Haoxi <whanghaoxi201@mail.ustc.edu.cn>
+Description: Gaussian Mixture Model Averaging with Cross-Validation is an R package designed to enhance the performance of Gaussian Mixture Models (GMMs) by employing cross-validation techniques for model selection and averaging. The package allows users to fit multiple GMMs with varying component numbers and weights, using cross-validation to select the optimal configuration. It incorporates robust model averaging methods, which combine the predictions of multiple models to improve the overall accuracy and generalization. With a focus on stability and efficiency, this package is ideal for practitioners and researchers seeking to leverage GMMs for complex data modeling, ensuring both reliability and performance in the presence of diverse underlying distributions.
+License: GPL (>= 2)
+Imports: Rcpp, mclust, distr, Rsolnp, dplyr, mvtnorm, pgmm, stats
+Suggests: knitr, rmarkdown
+LinkingTo: Rcpp
+RoxygenNote: 7.3.2
+Encoding: UTF-8
+VignetteBuilder: knitr
+URL: http://github.com/Haoxi-Wang/SA24204183
+BugReports: http://github.com/Haoxi-Wang/SA24204183/issues
